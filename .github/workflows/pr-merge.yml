@@ -62,6 +62,7 @@ jobs:
           - uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
             with:
               script: |
+                console.log("pr branch")
                 if (process.env.NUM_LABELS_CHOSEN != 1) {
                     github.rest.issues.createComment({
                     issue_number: context.payload.pull_request.number,
